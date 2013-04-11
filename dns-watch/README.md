@@ -118,7 +118,7 @@ By default, if a blacklist is set to auto-update, the tool will connect every 24
 
 If for whatever reason, you want the trigger the update manually, just send the USR1 signal:
 <pre>
-kill -USR1 <dns_watch_PID>
+kill -USR1 dns_watch_PID
 </pre>
 In the logs you should see something like this:
 <pre>
@@ -153,7 +153,7 @@ Parse old logs
 --------------
 By default dns-watch monitors only the current log file (for instance 'query.log'), but you can also make it parse all old files during startup by setting the 'old_logs' options to 1. But what if you've just updated your blacklists and you want to check if none of the newly added domains appear in your old logs? This is exactly what signal USR2 is for - when send to the program, it will cause it to read all log files (query.log.*) and report on any matches with its current set of blacklists:
 <pre>
-kill -USR1 <dns_watch_PID>
+kill -USR2 dns_watch_PID
 </pre>
 In the logs you should see:
 <pre>
