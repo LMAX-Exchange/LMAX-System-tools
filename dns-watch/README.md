@@ -47,7 +47,7 @@ Installation instructions
 3. The default blacklist URLs should work just fine. Check the term of use for each blacklist (ie,allowed frequency of updates, etc.) and if possible, consider a donation to support them.
 4. If you have any specific domains you want to watch for, put them one domain per line in a file, and use the BL.custom section to make dns-watch use it.
 5. Edit filters.txt - put there any domains you don't care about (quite possibly all your internal domains).
-6. Run the script manually (it will daemonise itself to run in the background automatically) or better, use the init script provided in ./script.
+6. Run the script manually (it will daemonise itself to run in the background automatically) or better, use the init script provided in ./scripts.
 
 Running it manually:
 <pre>
@@ -204,7 +204,7 @@ If you need to do any additional parsing or stripping, just work directly on and
 Contact information
 ===================
 
-Feel free to contact me at radegand _at_ 02 dot pl
+Feel free to contact me at radegand _at_ o2 dot pl
 
 Feedback, comments, suggestions appreciated!
 
