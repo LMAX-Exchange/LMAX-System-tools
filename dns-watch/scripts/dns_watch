@@ -1,0 +1,48 @@
+#!/bin/sh
+
+DIRECTORY="/opt/dns_watch"
+
+CONFIG=${DIRECTORY}/etc/dns_watch.conf
+
+PID="/var/run/dns_watch/dns_watch.pid"
+SOCKET="/var/run/dns_watch/dns_watch"
+
+start() {
+	${DIRECTORY}/bin/dns_watch.py -c ${CONFIG} &
+}
+
+stop() {
+	kill `cat $PID`
+	rm ${PID}
+	#rm ${SOCKET}
+	
+}
+
+status() {
+	echo "Status is unknown...call ghostbusters."
+}
+
+
+case "$1" in
+  start)
+	echo "Starting dns_watch..."
+	start
+	;;
+  stop) 
+	echo "Stopping dns_watch..."
+	stop
+	;;
+  restart)
+	echo "Restarting dns_watch..."
+	stop
+	start
+	;;
+  status)
+    status
+	;;
+  *)
+	echo "*** Usage: $0 {start|stop|restart|status}"
+	exit 1
+esac
+
+exit 0
